@@ -1,0 +1,15 @@
+{
+  "name": "@sco-techlab/nestjs-i18n",
+  "version": "0.0.1",
+  "author": "Santiago Comeras Oteo",
+  "description": "SCO Backend Framework",
+  "main": "index.js",
+  "repository": {},
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.2.0"
+  }
+}
