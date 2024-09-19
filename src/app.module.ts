@@ -10,6 +10,7 @@ import { TranslateModule } from '@app/nestjs-i18n';
       default: 'en',
       path: './i18n',
       encoding: 'utf8',
+      header: 'accept-language',
     })
   ],
   controllers: [

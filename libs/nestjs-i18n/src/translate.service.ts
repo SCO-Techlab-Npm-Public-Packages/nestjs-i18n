@@ -97,7 +97,11 @@ export class TranslateService {
   }
 
   public requestLanguage(request: any): string {
-    const acceptLanguage = request.headers['accept-language'];
+    const header_name: string = this.options.header 
+      ? this.options.header 
+      : 'accept-language';
+
+    const acceptLanguage = request.headers[header_name];
     if (!acceptLanguage || acceptLanguage.length == 0) {
       return this.options.default;
     }
