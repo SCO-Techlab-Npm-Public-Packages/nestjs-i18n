@@ -11,7 +11,7 @@
     "build-library": "rm -rf ./dist && npm run prebuild && tsc && cp ./libs/nestjs-i18n/package.json ./dist/libs/nestjs-i18n && cp ./libs/nestjs-i18n/README.md ./dist/libs/nestjs-i18n && chmod -R 777 ./dist && cp -r ./dist/libs/nestjs-i18n/src/* ./dist/libs/nestjs-i18n/ && rm -rf ./dist/src && rm -rf ./dist/test && rm -rf dist/libs/nestjs-i18n/src",
     "start-library": "npm link ./libs/nestjs-i18n/ && nest start --watch",
     "install-local-library": "npm i ./dist/libs/nestjs-i18n",
-    "publish-library": "npm run build-library && npm publish dist/libs/nestjs-i18n",
+    "publish-library": "npm run build-library && npm publish dist/libs/nestjs-i18n --access=public",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "start": "npm run build-library && npm run install-local-library && nest start",
     "start:dev": "npm run build-library && npm run install-local-library && nest start --watch",
