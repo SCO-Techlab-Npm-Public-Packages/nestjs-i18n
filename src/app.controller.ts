@@ -8,6 +8,7 @@ export class AppController {
 
   @Get()
   async dummy() {
-    console.log(`[dummy] Label 'hello.world' translate value is: ${this.translateService.translate('hello.world')}`);
+    console.log(`[dummy] Label 'hello.world' in lang '${this.translateService.getCurrentLang()}' translate value is: ${this.translateService.translate('hello.world')}`);
+    return this.translateService.translate('hello.world');
   }
 }
