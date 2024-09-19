@@ -80,4 +80,4 @@ export class TranslateConfig {
 
 
 ## Examples
-- Live coding: https://stackblitz.com/edit/nestjs-typescript-starter-2cecjo
+- Live coding: https://stackblitz.com/edit/sco-techlab-nestjs-i18n?file=src%2Fapp.interceptor.ts
