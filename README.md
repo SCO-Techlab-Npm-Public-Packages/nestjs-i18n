@@ -1,4 +1,4 @@
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="text-align: center;">
   <img src="sco-techlab.png" alt="plot" width="250" />
 </div>
 <br>
