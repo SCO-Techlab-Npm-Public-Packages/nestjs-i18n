@@ -1,6 +1,6 @@
 {
   "name": "@sco-techlab/nestjs-i18n",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "SCO Techlab (Santiago Comeras Oteo)",
   "description": "Multilanguage translates with json files for Nest.JS framework",
   "main": "index.js",
