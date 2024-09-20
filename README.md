@@ -1,7 +1,6 @@
-### @SCO-Techlab/nestjs-i18n
-
-![plot](./sco-techlab.png)
-
+<div style="text-align: center;">
+  <img src="sco-techlab.png" alt="plot" width="500" />
+</div>
 <br>
 Nest.JS i18n is a easy translate service for backend messages, is based in json files saved in a folder path.
 
