@@ -75,10 +75,50 @@ export class TranslateConfig {
   default: string; // default file name who whill load if no accept-language header provided or accept-language header value not exists
   path: string; // Path of the folder who contains the translate.json files
   encoding?: BufferEncoding; // Encoding of the translate.json file by default value is 'utf8'
-  header?: string; // Header name to find the language to set to the service in the interceptor
+  header?: string; // Header name to find the language to set to the service in the interceptor by default value is 'accept-language'
 }
 </pre>
 
+
+## Translate files (JSON)
+You should create the translation files with the following format 'language.json' such as 'en.json', 'es.json'... <br>
+All translation files should be in the same folder, which is the path we configured in the module<br>
+
+- En translates
+<pre>
+{
+  "hello.world": "Hello world",
+  "tests": {
+    "test1": {
+      "1": "First translate of tests / test1 block"
+    }
+  }
+}
+</pre>
+- Es translates
+<pre>
+{
+  "hello.world": "Hola mundo",
+  "tests": {
+    "test1": {
+      "1": "Primera traducción del bloque tests / test1"
+    }
+  }
+}
+</pre>
+
+## Translate method
+For single translate like 'hello.world' in last translate files example you should pass the label name like argument
+<pre>
+translateService.translate('hello.world')
+</pre>
+
+For nested translate like 'tests / test1 / 1' you must pass the blocks and translate name in parent order as a string[] value
+<pre>
+translateService.translate(['tests', 'test1', '1'])
+</pre>
+
+If the translation does not exist, the method will return as a result the name of the translation passed by parameter to the translate method
 
 ## Examples
 - Live coding: [Stackblitz example](https://stackblitz.com/edit/sco-techlab-nestjs-i18n?file=src%2Fapp.interceptor.ts)
