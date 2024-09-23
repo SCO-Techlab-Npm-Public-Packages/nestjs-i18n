@@ -1,13 +1,21 @@
 {
   "name": "@sco-techlab/nestjs-i18n",
-  "version": "1.0.1",
-  "author": "SCO Techlab (Santiago Comeras Oteo)",
+  "version": "1.0.2",
+  "author": "SCO Techlab (Santiago Comeras Oteo) <sco.techlab@gmail.com> (https://web.sco-techlab.es/)",
   "description": "Multilanguage translates with json files for Nest.JS framework",
   "main": "index.js",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:SCO-Techlab/nestjs-i18n.git"
   },
+  "homepage": "https://github.com/SCO-Techlab/nestjs-i18n",
+  "keywords": [
+    "Nest",
+    "Nestjs",
+    "translates",
+    "i18n"
+  ],
   "dependencies": {
     "@nestjs/common": "^10.0.0",
     "reflect-metadata": "^0.1.13"
