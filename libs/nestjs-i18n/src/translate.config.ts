@@ -3,4 +3,5 @@ export class TranslateConfig {
   path: string;
   encoding?: BufferEncoding;
   header?: string;
+  externalData?: boolean;
 }
