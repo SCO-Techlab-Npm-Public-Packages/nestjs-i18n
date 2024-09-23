@@ -1,3 +1,8 @@
 {
-    "hello.world": "Witaj świecie"
+    "hello.world": "Witaj świecie",
+    "tests": {
+        "test1": {
+            "1": "Pierwsze tłumaczenie bloku tests / test1"
+        }
+    }
 }
