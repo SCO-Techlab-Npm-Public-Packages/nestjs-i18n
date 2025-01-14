@@ -12,12 +12,16 @@ npm i @sco-techlab/nestjs-i18n
 <pre>
 @Module({
   imports: [
+
+    // Register module example
     TranslateModule.register({
       default: 'en',
       path: './i18n',
       encoding: 'utf8',
       header: 'accept-language',
     }),
+
+    // RegisterAsync module example
     TranslateModule.registerAsync({
       useFactory: () => {
         return {

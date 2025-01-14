@@ -6,7 +6,7 @@ interface TranslateConfigFactory {
   createTranslateConfig(): Promise<TranslateConfig> | TranslateConfig;
 }
 
-export interface TranslateAsyncConfig extends Pick<ModuleMetadata, 'imports'> {
+interface TranslateAsyncConfig extends Pick<ModuleMetadata, 'imports'> {
   inject?: any[];
   useExisting?: Type<TranslateConfigFactory>;
   useClass?: Type<TranslateConfigFactory>;
