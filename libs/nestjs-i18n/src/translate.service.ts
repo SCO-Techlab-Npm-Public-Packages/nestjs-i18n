@@ -13,21 +13,8 @@ export class TranslateService {
   constructor(@Inject('CONFIG_OPTIONS') private readonly options: TranslateConfig) {}
 
   private async onModuleInit(): Promise<void> {
-    if (!this.options) {
+    if (!this.options || !this.options.default || !this.options.path) {
       throw new Error('No translate options provided');
-    }
-
-    // If translate service is loaded from external there is not need to do checks
-    if (this.options.externalData) {
-      return;
-    }
-
-    if (!this.options.default) {
-      throw new Error('No default language provided');
-    }
-    
-    if (!this.options.path) {
-      throw new Error('No translate files path provided');
     }
 
     if (!fs.existsSync(this.options.path)) {
@@ -85,12 +72,6 @@ export class TranslateService {
     if (!lang || lang.length == 0) lang = this.options.default;
     this._currentLang = lang;
     this._setData(this._currentLang);
-  }
-
-  public setValues(translates: any): void {
-    if (translates && Object.values(translates).length > 0) {
-      this._data = translates;
-    }
   }
 
   public translate(translate: string | string[]): string {
