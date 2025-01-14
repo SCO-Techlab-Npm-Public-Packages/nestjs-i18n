@@ -91,7 +91,7 @@ All translation files should be in the same folder, which is the path we configu
 - En translates
 <pre>
 {
-  "hello.world": "Hello world",
+  "hello-world": "Hello world",
   "tests": {
     "test1": {
       "1": "First translate of tests / test1 block"
@@ -102,7 +102,7 @@ All translation files should be in the same folder, which is the path we configu
 - Es translates
 <pre>
 {
-  "hello.world": "Hola mundo",
+  "hello-world": "Hola mundo",
   "tests": {
     "test1": {
       "1": "Primera traducción del bloque tests / test1"
@@ -112,12 +112,17 @@ All translation files should be in the same folder, which is the path we configu
 </pre>
 
 ## Translate method
-For single translate like 'hello.world' in last translate files example you should pass the label name like argument
+For single translate like 'hello-world' in last translate files example you should pass the label name like argument
 <pre>
-translateService.translate('hello.world')
+translateService.translate('hello-world')
 </pre>
 
-For nested translate like 'tests / test1 / 1' you must pass the blocks and translate name in parent order as a string[] value
+For nested translates like 'tests / test1 / 1' you should pass the blocks and the translate of the JSON object like the last example
+<pre>
+translateService.translate('tests.test1.1')
+</pre>
+
+An other example for nested translate like 'tests / test1 / 1' you can pass the blocks of the JSON object in parent order as a string[] value
 <pre>
 translateService.translate(['tests', 'test1', '1'])
 </pre>

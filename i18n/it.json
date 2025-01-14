@@ -1,5 +1,5 @@
 {
-    "hello.world": "Ciao mondo",
+    "hello-world": "Ciao mondo",
     "tests": {
         "test1": {
             "1": "Prima traduzione di blocco tests / test1"

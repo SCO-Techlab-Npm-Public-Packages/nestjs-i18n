@@ -1,5 +1,5 @@
 {
-    "hello.world": "Hola mundo",
+    "hello-world": "Hola mundo",
     "tests": {
         "test1": {
             "1": "Primera traducción del bloque tests / test1"
