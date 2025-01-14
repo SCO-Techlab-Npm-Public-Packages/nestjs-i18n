@@ -17,7 +17,6 @@ npm i @sco-techlab/nestjs-i18n
       path: './i18n',
       encoding: 'utf8',
       header: 'accept-language',
-      externalData: false,
     }),
     TranslateModule.registerAsync({
       useFactory: () => {
@@ -26,17 +25,8 @@ npm i @sco-techlab/nestjs-i18n
           path: './i18n',
           encoding: 'utf8',
           header: 'accept-language',
-          externalData: false,
         };
       },
-    }),
-
-    TranslateModule.register({
-      default: undefined,
-      path: undefined,
-      encoding: undefined,
-      header: 'accept-language',
-      externalData: false,
     }),
   ],
 })
@@ -52,14 +42,7 @@ export class AppInterceptor implements NestInterceptor {
 
   intercept(context: ExecutionContext, next: CallHandler): Observable&lt;any&gt; {
     const request = context.switchToHttp().getRequest();
-    const requestLanguage: string = this.translateService.requestLanguage(request);
-
-    // Translates json files example
-    this.translateService.setCurrentLang(requestLanguage);
-
-    // Translates loaded from external example
-    /* const current = Object.values(TRANSLATES_MOCK)[Object.keys(TRANSLATES_MOCK).indexOf(requestLanguage)];
-    this.translateService.setValues(current); */
+    this.translateService.setCurrentLang(this.translateService.requestLanguage(request));
     
     return next.handle().pipe(
       tap(() => {
@@ -93,7 +76,6 @@ export class TranslateConfig {
   path: string; // Path of the folder who contains the translate.json files
   encoding?: BufferEncoding; // Encoding of the translate.json file by default value is 'utf8'
   header?: string; // Header name to find the language to set to the service in the interceptor by default value is 'accept-language'
-  externalData?: boolean // Flag to provide the translates data to the service from external mode of json translate files, you can load them from DB for example
 }
 </pre>
 
