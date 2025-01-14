@@ -80,7 +80,13 @@ export class TranslateService {
     }
 
     if (typeof translate === 'string') {
-      return this._data[translate] ? this._data[translate] : translate;
+      const dot_split: string[] = translate.split('.') ?? [];
+
+      if (!dot_split || dot_split.length == 0) {
+        return this._data[translate] ? this._data[translate] : translate;
+      }
+      
+      translate = dot_split;
     }
 
     let currentLevel = this._data;
@@ -89,7 +95,8 @@ export class TranslateService {
       if (currentLevel[key]) {
         currentLevel = currentLevel[key];
       } else {
-        return translate[translate.length - 1];
+        if (typeof translate == 'string') return translate;
+        return translate.join('.');
       }
     }
 
