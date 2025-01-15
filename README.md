@@ -75,7 +75,7 @@ export class AppModule {}
 </pre>
 
 
-## Nest.JS i18n config
+### Nest.JS i18n config
 <pre>
 export class TranslateConfig {
   default: string; // default file name who whill load if no accept-language header provided or accept-language header value not exists
@@ -86,7 +86,7 @@ export class TranslateConfig {
 </pre>
 
 
-## Translate files (JSON)
+### Translate files (JSON)
 You should create the translation files with the following format 'language.json' such as 'en.json', 'es.json'... <br>
 All translation files should be in the same folder, which is the path we configured in the module<br>
 
@@ -113,7 +113,7 @@ All translation files should be in the same folder, which is the path we configu
 }
 </pre>
 
-## Translate method
+### Translate method
 For single translate like 'hello-world' in last translate files example you should pass the label name like argument
 <pre>
 translateService.translate('hello-world')
@@ -131,5 +131,16 @@ translateService.translate(['tests', 'test1', '1'])
 
 If the translation does not exist, the method will return as a result the name of the translation passed by parameter to the translate method
 
-## Examples
+### Examples
 - Live coding: [Stackblitz example](https://stackblitz.com/edit/sco-techlab-nestjs-i18n?file=src%2Fapp.interceptor.ts)
+
+## Author
+Santiago Comeras Oteo
+- <a href="https://web.sco-techlab.es/">SCO Techlab</a>
+- <a href="https://github.com/SCO-Techlab">GitHub</a>
+- <a href="https://www.npmjs.com/settings/sco-techlab/packages">Npm</a>
+- <a href="https://www.linkedin.com/in/santiago-comeras-oteo-4646191b3/">LinkedIn</a>  
+
+<p align="center">
+  <img src="sco-techlab.png" alt="plot" width="250" />
+</p>
