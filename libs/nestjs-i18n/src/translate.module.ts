@@ -34,7 +34,7 @@ export class TranslateModule {
     return {
       module: TranslateModule,
       providers: [
-        ...this.createConnectProviders(options),
+        ...createConnectProviders(options),
         TranslateService, 
       ],
       exports: [
@@ -43,25 +43,20 @@ export class TranslateModule {
       global: true,
     };
   }
+}
 
-  private static createConnectProviders(options: TranslateAsyncConfig): Provider[] {
-    if (options.useFactory) {
-      return [
-        {
-          provide: 'CONFIG_OPTIONS',
-          useFactory: options.useFactory,
-          inject: options.inject || [],
-        },
-      ];
-    }
-
+function createConnectProviders(options: TranslateAsyncConfig): Provider[] {
+  if (options.useFactory) {
     return [
-      {
-        provide: 'CONFIG_OPTIONS',
-        useFactory: async (optionsFactory: TranslateConfigFactory) =>
-          await optionsFactory.createTranslateConfig(),
-        inject: [options.useExisting || options.useClass],
-      },
+      { provide: 'CONFIG_OPTIONS', useFactory: options.useFactory, inject: options.inject || [] },
     ];
   }
+
+  return [
+    {
+      provide: 'CONFIG_OPTIONS',
+      useFactory: async (optionsFactory: TranslateConfigFactory) => await optionsFactory.createTranslateConfig(),
+      inject: [options.useExisting || options.useClass],
+    },
+  ];
 }
