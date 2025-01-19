@@ -19,7 +19,7 @@
     "language",
     "multilanguage"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "@nestjs/common": "^10.0.0",
     "reflect-metadata": "^0.1.13"
   }
